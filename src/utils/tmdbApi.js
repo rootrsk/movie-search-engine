@@ -1,5 +1,7 @@
 import axios from "axios";
 axios.defaults.baseURL='https://api.themoviedb.org/3'
+
+
 export async function getApi(url){
     try {
         const response = await axios({
