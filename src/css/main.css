@@ -5,52 +5,11 @@
     /* font-family: fira Code; */
 }
 body{
-    background: rgb(234, 232, 232);
+    background: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .movies-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-.movie_card{
-    padding: 10px;
-    background-color: rgb(255, 255, 255);
-    margin: 10px;
-    width: 300px;
-}
-.poster{
-    width: 300px;
-    cursor: pointer;
-}
-
-.header{
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
-    align-items: center;
-    font-family: fira Code;
-}
-.search-box-container{
-    background: white;
-    border: 2px solid rgb(238, 237, 237);
-    border-radius: 5px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-}
-.search-input{
-    /* padding: 10px 20px; */
-    border: none;
-    outline: none;
-    padding: 10px 0px 10px 10px;
-    font-family: fira Code;
-    flex: 1;
-    
-}
-.search-button{
-    border: none;
-    outline: none;
-    background: transparent;
-    cursor: pointer;
-    padding: 10px 10px 10px 10px;
 }

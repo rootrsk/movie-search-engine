@@ -32,13 +32,3 @@
 .movies-details h1{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.dynamic-island{
-    width: 50px;
-    height: 150px;
-    background-color: black;
-    position: absolute;
-    border-radius: 12px 0px 0px 12px;
-    left: 100%;
-    top:50%;
-    transform: translate(-100%,-50%);
-}

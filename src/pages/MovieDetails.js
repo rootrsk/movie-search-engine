@@ -1,7 +1,7 @@
 import{ useEffect,useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { fetchMovieById } from '../utils/tmdbApi';
-
+import {FaHeart} from 'react-icons/fa'
 import './MovieDetails.css'
 
 function MovieDetails() {
@@ -15,6 +15,7 @@ function MovieDetails() {
     useEffect(() => {
         fetchMovieDeatils()
     }, [])
+
     return (
         <div className='movie-details-page'>
             {movieDetails && 
@@ -42,9 +43,9 @@ function MovieDetails() {
                         <p>Runtime : {movieDetails.runtime} Minutes</p>
                         <p>Rating : {movieDetails.vote_average}</p>
                     </div>
-                    <div className='dynamic-island'>
-                        
-                    </div>
+                    
+                       
+                    
                 </div>
             }
         </div>
