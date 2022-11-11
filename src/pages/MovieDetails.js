@@ -1,6 +1,8 @@
 import{ useEffect,useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { fetchMovieById } from '../utils/tmdbApi';
+import {FaHeart} from 'react-icons/fa'
+import './MovieDetails.css'
 
 function MovieDetails() {
     const params = useParams()
@@ -13,6 +15,7 @@ function MovieDetails() {
     useEffect(() => {
         fetchMovieDeatils()
     }, [])
+
     return (
         <div className='movie-details-page'>
             {movieDetails && 
@@ -22,8 +25,6 @@ function MovieDetails() {
                     alt="background-poster" 
                 />
             }
-            <div className="backgrounder-poster-cover">
-            </div>
             
             {console.log(movieDetails)}
             {movieDetails &&
@@ -32,6 +33,7 @@ function MovieDetails() {
                         <h1>{movieDetails.title}</h1>
                         <h3>{movieDetails.tagline}</h3>
                         <p>{movieDetails.overview}</p>
+                        <br></br>
                         <span>Genere: </span>
                         {
                             movieDetails && movieDetails.genres.map((gn)=><span>{gn.name}, </span>)
@@ -41,9 +43,9 @@ function MovieDetails() {
                         <p>Runtime : {movieDetails.runtime} Minutes</p>
                         <p>Rating : {movieDetails.vote_average}</p>
                     </div>
-                    <div className='movei-deatils'>
-
-                    </div>
+                    
+                       
+                    
                 </div>
             }
         </div>
