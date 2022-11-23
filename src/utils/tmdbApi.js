@@ -12,7 +12,7 @@ export async function getApi(url){
             }
         })
         
-        console.log(response.data)
+       
         if(response.data && response.data.results){
             return response.data.results
         }
@@ -64,6 +64,7 @@ export async function fetchMovieById(id) {
 
 export async function fetchMovieByName(name) {
     try {
+        console.log(name)
         const response = await axios({
             url:`/search/movie`,
             method:'get',
@@ -74,6 +75,7 @@ export async function fetchMovieByName(name) {
             }
         })
         if(response && response.data){
+            console.log("response getting",response)
             return response.data
         }
     } catch (error) {

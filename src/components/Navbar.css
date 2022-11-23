@@ -1,4 +1,8 @@
-
+.site-title{
+    color: white;
+    margin: 0px !important;
+    cursor: pointer;
+}
 .header{
     display: flex;
     justify-content: space-between;

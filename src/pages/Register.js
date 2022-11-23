@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {useState} from 'react';
 import './Register.css'
 import axios from 'axios';
 import { useNavigate } from "react-router-dom"
+import { UserContext } from '../App';
+import { useEffect } from 'react';
 
-function Register({user,setUser}) {
-
+function Register({setUser}) {
     const [userName,setUsername] = useState("");
-    const [email,setEmail] = useState("");
-	const [password,setPassword] = useState("");
+    const [email,setEmail] = useState("swarnitsinha@gmail.com");
+	const [password,setPassword] = useState("12345");
 	const [login,setLogin] = useState(true);
-
+	const user = useContext(UserContext)
     const navigate = useNavigate();
     const navigateToHome = () => navigate(`/`)
 
@@ -21,18 +22,13 @@ function Register({user,setUser}) {
 		if(login){
 			const result = await axios.post(uri+"/login",{email,password})
 			if(!result.data.error){
-
-				const token = result.data.token;
-				localStorage.setItem("Token",JSON.stringify(token));
-                localStorage.setItem("username",result.data.username);
-				setUsername(result.data.username)
-
-                navigateToHome();
+				const user = {email,...result.data}
+				localStorage.setItem("user",JSON.stringify(user));
+				setUser(user)
 			}
 			else{
 				alert(result.data.message);
 			}
-			// console.log(result.data);
 		}
 		else{
 			if(!userName) return;
@@ -47,7 +43,11 @@ function Register({user,setUser}) {
 			}
 		}
 	}
-
+	useEffect(()=>{
+		if(user){
+			navigateToHome()
+		}
+	},[user])
   return (
 
     <div className='registerContainer'>
@@ -81,7 +81,9 @@ function Register({user,setUser}) {
 			<button className='btn btn-primary my-2' type="submit" onClick={logHandler}>{(login)?"Sign In":"Sign Up"}</button>
 			
 			<button className='btn btn-primary my-2' onClick={()=>setLogin(!login)}>{login?"New User? Register here":"Already have an account?"}</button>
-			
+			{/* <div>
+				<a onClick={forgotPassword}>Forgot your password?</a>
+			</div> */}
 		</div>
 		
 		{/* <div>

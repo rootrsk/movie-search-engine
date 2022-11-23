@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Like from './Like'
 import './MovieCard.css'
@@ -13,7 +13,7 @@ function MovieCard({movie}) {
         const link = "/movie/" + movie.id;
         navigate(link)
     }
-
+   
 
     return (
         <div className='movie_card'>

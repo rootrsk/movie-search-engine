@@ -1,7 +1,24 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import React, { useContext } from 'react'
+import { LikedMovieContext,  } from '../App';
+import './MovieListModal.css'
+import {DownloadPdf} from '../utils/DownloadPdf'
+
+import MovieListCard from './MovieListCard';
+import LikedMovieList from './LikedMovieList';
 
 const MovieListModal = (props)=> {
+
+  //data
+  const data = useContext(LikedMovieContext);
+  // console.log(data);
+
+  const downloadHandler = ()=>{
+    props.onHide();
+    DownloadPdf(data);    
+  }
+
 
   return (
     <Modal
@@ -9,6 +26,7 @@ const MovieListModal = (props)=> {
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      className='style-modal'
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
@@ -17,16 +35,11 @@ const MovieListModal = (props)=> {
       </Modal.Header>
 
       {/* create a componenet for showing movie list */}
-      <Modal.Body>
-        <h4>Black Adam</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
+      <Modal.Body className='modal-body'>
+        <LikedMovieList/>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Download</Button>
+        <Button  onClick={downloadHandler}>Download List</Button>
       </Modal.Footer>
     </Modal>
   );

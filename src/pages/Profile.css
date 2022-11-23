@@ -1,0 +1,21 @@
+.profile-page{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    margin-top: 50px;
+}
+.movieList{
+    margin: 0px;
+    padding: 10px;
+    overflow-y: scroll;
+    height: 500px;
+    background-color: rgb(252, 252, 252);
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.changePassword{
+    margin: 100px 100px 0px 0px;
+    display: flex;
+    flex-direction: column;
+}
