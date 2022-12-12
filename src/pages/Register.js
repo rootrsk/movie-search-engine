@@ -15,7 +15,8 @@ function Register({setUser}) {
     const navigate = useNavigate();
     const navigateToHome = () => navigate(`/`)
 
-    const uri = "http://localhost:5000"
+    // const uri = process.env.REACT_APP_BACKEND_URL 
+	const uri = "https://movie-search-engine-backend.vercel.app";
 	const logHandler = async(e)=>{
 		e.preventDefault();
 		if(!email || !password) return;
@@ -44,6 +45,7 @@ function Register({setUser}) {
 		}
 	}
 	useEffect(()=>{
+		console.log("fetching url " ,uri);
 		if(user){
 			navigateToHome()
 		}

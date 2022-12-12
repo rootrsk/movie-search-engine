@@ -1,8 +1,8 @@
 import axios from "axios"
 import { fetchMovieById } from './tmdbApi';
 
-const uri = "http://localhost:5000/"
-
+// const uri = "http://localhost:5000/"
+const uri = "https://movie-search-engine-backend.vercel.app/"
 export const saveInDb = async (movie)=>{
 const token = JSON.parse(localStorage.getItem('user'))?.token;
 

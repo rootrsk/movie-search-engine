@@ -1,0 +1,20 @@
+footer{
+    background-color: #404258;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+footer p{
+    margin: 0px;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+footer p a{
+    text-decoration: none;
+    color: white;
+}
+footer p a:hover{
+    color: red;
+}

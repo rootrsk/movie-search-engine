@@ -41,7 +41,7 @@ const Navbar = ({setUser,setMovies})=>{
 
 
     return (
-        <div className='header'>
+        <nav className='nav'>
                 <h1 className='site-title' onClick={()=>Navigate('/')}>LookOut</h1>
                 <div className='search-and-user'>
                     <div className='search-box-container'>
@@ -93,7 +93,7 @@ const Navbar = ({setUser,setMovies})=>{
                     
                 </div>
                 
-            </div>
+            </nav>
     )
 }
 
