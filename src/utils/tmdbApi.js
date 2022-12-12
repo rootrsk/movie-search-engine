@@ -1,5 +1,7 @@
 import axios from "axios";
 axios.defaults.baseURL='https://api.themoviedb.org/3'
+
+
 export async function getApi(url){
     try {
         const response = await axios({
@@ -10,7 +12,7 @@ export async function getApi(url){
             }
         })
         
-        console.log(response.data)
+       
         if(response.data && response.data.results){
             return response.data.results
         }
@@ -62,6 +64,7 @@ export async function fetchMovieById(id) {
 
 export async function fetchMovieByName(name) {
     try {
+        console.log(name)
         const response = await axios({
             url:`/search/movie`,
             method:'get',
@@ -72,6 +75,7 @@ export async function fetchMovieByName(name) {
             }
         })
         if(response && response.data){
+            console.log("response getting",response)
             return response.data
         }
     } catch (error) {
