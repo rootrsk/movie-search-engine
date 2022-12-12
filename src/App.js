@@ -1,14 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {useState, useEffect, createContext} from 'react'
 
-import About from "./pages/About";
 import Homepage from "./pages/Homepage";
 import MovieDetails from "./pages/MovieDetails";
 import Register from "./pages/Register"
 import Profile from "./pages/Profile";
 import { getLikedMovies } from './utils/movieInDB'
 import { getApi } from './utils/tmdbApi'
+
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer"
 // import {getLikedMovies} from './utils/movieInDB';
 
 export const MovieContext = createContext()
@@ -53,10 +54,10 @@ function App() {
 						<Routes>
 							<Route path="/" element={<Homepage  setLikedMovie={setLikedMovie}/>} />
 							<Route path='/register' element={<Register setUser={setUser}/>}/>
-							<Route path="/about" element={<About />} />
 							<Route path='/movie/:id' element={<MovieDetails />} />
 							<Route path='/user/:username'  element={<Profile/>}/>
 						</Routes>
+						<Footer/>
 					</BrowserRouter>
 				</LikedMovieContext.Provider>	
 			</MovieContext.Provider>

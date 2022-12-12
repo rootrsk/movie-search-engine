@@ -10,10 +10,12 @@ function Profile() {
     const [newPass, setNewPass] = useState('');
     const [confirmPass, setConfirmPass] = useState('');
 
-    const uri = "http://localhost:5000/changePassword"
+    // const uri = "http://localhost:5000/changePassword"
+    const uri = "https://movie-search-engine-backend.vercel.app/changePassword";
+    const user= JSON.parse(localStorage.getItem('user'));
 
-    const username = localStorage.getItem('username')
-    const email = localStorage.getItem('email')
+    const username = user.username;
+    const email = user.email;
     const token = JSON.parse(localStorage.getItem('Token'))
     
     // console.log(username,email)
@@ -77,7 +79,7 @@ function Profile() {
                             value={confirmPass}
                             onChange={(e)=>setConfirmPass(e.target.value)}
                         />
-                        <button onClick={changePassword}>Change Password</button>
+                        <button className='changeBtn' onClick={changePassword}>Change Password</button>
                     
                     </div>
                 </div>
