@@ -1,30 +1,17 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import MovieCard from '../components/MovieCard'
-import { getApi } from '../utils/tmdbApi'
-import Navbar from '../components/Navbar'
+
+import { MovieContext, UserContext } from '../App'
 
 function Homepage() {
+    // const [movies,setMovies] = useState(null);
+    const movies = useContext(MovieContext)
 
-    const [movies,setMovies] = useState([])
-    const [movie,setMovie] = useState('');
-
-    const fetchHomeMovies = async ()=>{
-        const data = await getApi('/')
-        setMovies(data)
-        console.log(data)
-    }
-    
     useEffect(()=>{
-        fetchHomeMovies()
+        console.log("xyz :  ",movies)
     },[])
-
     return (
-        <div >
-            <Navbar movie={movie} setMovie={setMovie} 
-                    fetchHomeMovies={fetchHomeMovies}
-                    setMovies={setMovies}/>
-            
+        <div > 
             <div className='movies-container'>
                 {
                     movies.map((movie)=>{
@@ -33,7 +20,6 @@ function Homepage() {
                     })
                 }
             </div>
-            
         </div>
     )
 }

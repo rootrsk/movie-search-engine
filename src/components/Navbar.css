@@ -1,5 +1,4 @@
-
-.header{
+.nav{
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
@@ -7,7 +6,12 @@
     font-family: fira code;
     font-weight: 700;
     background-color: #404258;
-    
+   
+}
+.site-title{
+    color: white;
+    margin: 0px 0px 0px 30px;
+    cursor: pointer;
 }
 .search-and-user{
     display: flex;
@@ -33,7 +37,7 @@
     /* padding: 10px 20px; */
     border: none;
     outline: none;
-    padding: 10px 0px 10px 10px;
+    padding: 0px 10px;
     /* font-family: fira Code; */
     font-family: sans-serif;
     flex: 1;

@@ -8,6 +8,7 @@ function MovieDetails() {
     const params = useParams()
     const [movieDetails, setMovieDetails] = useState(null);
     const imageBaseUri = 'https://image.tmdb.org/t/p/original'
+    
     const fetchMovieDeatils = async ()=>{
         const data = await fetchMovieById(params.id)
         setMovieDetails(data)
@@ -15,6 +16,7 @@ function MovieDetails() {
     useEffect(() => {
         fetchMovieDeatils()
     }, [])
+
 
     return (
         <div className='movie-details-page'>
@@ -26,7 +28,7 @@ function MovieDetails() {
                 />
             }
             
-            {console.log(movieDetails)}
+            {/* {console.log(movieDetails)} */}
             {movieDetails &&
                 <div className='movies-details'>
                     <div>
