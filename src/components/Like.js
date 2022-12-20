@@ -3,6 +3,8 @@ import { FaHeart } from "react-icons/fa";
 import { LikedMovieContext} from '../App';
 import {saveInDb, removeFromDb} from '../utils/movieInDB'
 
+import {UserContext} from '../App';
+
 import './Like.css'
 
 const Like= (props)=>{
@@ -10,8 +12,18 @@ const Like= (props)=>{
     const [liked,setLike] = useState(false)
     const likedMovie = useContext(LikedMovieContext)
 
-   
+    const user = useContext(UserContext)
+
     const likeHandler =  ()=>{
+
+        //check if user is logged in or not
+        
+        console.log(user);
+        if(!user){
+            alert("Login First");
+            return;
+        }
+
         setLike(p=>!p);
         if(liked){
             removeFromDb(props.movie.id);
