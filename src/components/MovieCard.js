@@ -7,7 +7,7 @@ function MovieCard({movie}) {
     const imageBaseUri = 'https://image.tmdb.org/t/p/original'
     const imageBaseUri2 ='https://image.tmdb.org/t/p/w500'
     const navigate  = useNavigate()
-    const title = movie.title? movie.title.length > 40? movie.title.substring(0,40)+'...':movie.title  :'x     ..'
+    const title = movie.title? movie.title.length > 40? movie.title.substring(0,40)+'...':movie.title  :movie.original_name? movie.original_name:'x ..'
 
     const openMovieDetails = ()=>{
         const link = "/movie/" + movie.id;

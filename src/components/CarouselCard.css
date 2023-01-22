@@ -1,0 +1,21 @@
+/* 
+.carousel-title{
+    
+    position:absolute;
+    left: 50%;
+    top:90%;
+    transform: translate(-50%,-100%);
+    color: #fff;
+    /* z-index: 10; */
+    /* padding: 0px 100px; 
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 80%;
+    text-align: center;
+    border-radius: 10px;
+} */
+.slider-img{
+    /* overflow: hidden; */
+    width: 100vw;
+    /* height: %; */
+    margin: 0px;
+}

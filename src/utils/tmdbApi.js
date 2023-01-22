@@ -14,6 +14,7 @@ export async function getApi(url){
         
        
         if(response.data && response.data.results){
+           
             return response.data.results
         }
     } catch (error) {
